@@ -1,5 +1,7 @@
 package ru.nabiev.task5;
 
+import sun.misc.VM;
+
 import java.util.Scanner;
 
 public class VendingMachineApp {
@@ -9,45 +11,45 @@ public class VendingMachineApp {
 
         vm.addMoney();
         Scanner scanner = new Scanner(System.in);
-        int addmoney = scanner.nextInt();
-        if (addmoney < 0) {
+        int addCash = scanner.nextInt();
+        if (addCash < 0) {
             System.out.println("Недопустимое значение, перезапустите программму.");
         }
         else {
-            vm.account = vm.account + addmoney;
+            vm.account = vm.account + addCash;
             vm.mainMenu();
-            Scanner scannermm = new Scanner(System.in);
-            int choice1 = scannermm.nextInt();
+            Scanner scannerMM = new Scanner(System.in);
+            int choice1 = scannerMM.nextInt();
             if (choice1 == 1) {
-                Drinks.output();
+                vm.output();
                 int choice2 = scanner.nextInt();
                 switch (choice2) {
                     case 1:if ((vm.account - 20) < 0) {
-                        System.out.println("Недостаточно средств, возьмите обратно " + vm.account + " рублей.");
+                        vm.notEnoughMoney();
                     } else {
                         vm.account = vm.account - 20;
-                        System.out.println("Ваш чай готов, не забудьте ваши " + vm.account + " рублей.");
+                        vm.takeDrink();
                     }
                     break;
                     case 2:if ((vm.account - 30) < 0) {
-                        System.out.println("Недостаточно средств, возьмите обратно " + vm.account + " рублей.");
+                        vm.notEnoughMoney();
                     } else {
                         vm.account = vm.account - 30;
-                        System.out.println("Ваш кофе готов, не забудьте ваши " + vm.account + " рублей.");
+                        vm.takeDrink();
                     }
                     break;
                     case 3:if ((vm.account - 10) < 0) {
-                        System.out.println("Недостаточно средств, возьмите обратно " + vm.account + " рублей.");
+                        vm.notEnoughMoney();
                     } else {
                         vm.account = vm.account - 10;
-                        System.out.println("Ваша газировка готов, не забудьте ваши " + vm.account + " рублей.");
+                        vm.takeDrink();
                     }
                     break;
                     case 4:if ((vm.account - 25) < 0) {
-                        System.out.println("Недостаточно средств, возьмите обратно " + vm.account + " рублей.");
+                        vm.notEnoughMoney();
                     } else {
                         vm.account = vm.account - 25;
-                        System.out.println("Ваша газировка готов, не забудьте ваши " + vm.account + " рублей.");
+                        vm.takeDrink();
                     }
                     break;
                     default:
