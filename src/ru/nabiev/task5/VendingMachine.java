@@ -17,7 +17,6 @@ public class VendingMachine {
 
         private String drinkName;
         private int drinkPrice;
-        private int number;
 
         DrinkList(String drinkName, int drinkPrice) {
             this.drinkName = drinkName;
@@ -41,7 +40,7 @@ public class VendingMachine {
         }
     }
 
-    public DrinkList[] getDrinkList() {
+    DrinkList[] getDrinkList() {
         return DrinkList.values();
     }
 
@@ -53,30 +52,30 @@ public class VendingMachine {
         VendingMachine.account = account;
     }
 
-    public void mainMenu () {
+    void mainMenu () {
         System.out.println("Пожалуйста, выберите: 1) Показать меню напитков");
         System.out.println("2) Выйти из программы");
         System.out.println("Введите номер команды для выбора. ");
     }
 
-    public static void addMoney () {
+    static void addMoney () {
         System.out.println("Пожалуйста, добавьте деньги на счёт (вводом количества вносимых денег): ");
     }
 
-    public static void takeDrink () {
+    static void takeDrink () {
         System.out.println("Ваш напиток готов, не забудьте ваши " + account + " рублей.");
     }
 
-    public static void notEnoughMoney () {
+    static void notEnoughMoney () {
         System.out.println("Недостаточно средств, возьмите обратно " + account + " рублей.");
     }
 
-    public void output() {
+    void output() {
         int i = 1;
         for (DrinkList drinkList : DrinkList.values()) {
             System.out.println(i++ + " " + drinkList.getDrinkName() + " " + drinkList.getDrinkPrice());
         }
-        // TODO: 13.05.2019 удалить 
+        // TODO: 13.05.2019 удалить, не совсем правильно для каждого напитка создавать отдельный sout
         /*System.out.println("1 - " + TEA.name + ", " + TEA.price + " руб.");
         System.out.println("2 - " + COFFEE.name + ", " + COFFEE.price + " руб.");
         System.out.println("3 - " + SODA.name + ", " + SODA.price + " руб.");
