@@ -1,19 +1,48 @@
 package ru.nabiev.task5;
 
-import java.util.Scanner;
-
 public class VendingMachine {
     static int account = 0;
-    Drinks TEA = new Drinks("Чай", 20);
+
+    // TODO: 13.05.2019 удалить 
+    /*Drinks TEA = new Drinks("Чай", 20);
     Drinks COFFEE = new Drinks("Кофе", 30);
     Drinks SODA = new Drinks("Газированная вода", 10);
-    Drinks LEMONADE = new Drinks("Лимонад", 25);
+    Drinks LEMONADE = new Drinks("Лимонад", 25);*/
 
     public enum DrinkList {
-        TEA,
-        COFFEE,
-        SODA,
-        LEMONADE
+        TEA("Чай", 20),
+        COFFEE("Кофе", 30),
+        SODA("Газированная вода", 10),
+        LEMONADE("Лимонад", 25);
+
+        private String drinkName;
+        private int drinkPrice;
+        private int number;
+
+        DrinkList(String drinkName, int drinkPrice) {
+            this.drinkName = drinkName;
+            this.drinkPrice = drinkPrice;
+        }
+
+        public String getDrinkName() {
+            return drinkName;
+        }
+
+        public void setDrinkName(String drinkName) {
+            this.drinkName = drinkName;
+        }
+
+        public int getDrinkPrice() {
+            return drinkPrice;
+        }
+
+        public void setDrinkPrice(int drinkPrice) {
+            this.drinkPrice = drinkPrice;
+        }
+    }
+
+    public DrinkList[] getDrinkList() {
+        return DrinkList.values();
     }
 
     public static int getAccount() {
@@ -43,10 +72,15 @@ public class VendingMachine {
     }
 
     public void output() {
-        System.out.println("1 - " + TEA.name + ", " + TEA.price + " руб.");
+        int i = 1;
+        for (DrinkList drinkList : DrinkList.values()) {
+            System.out.println(i++ + " " + drinkList.getDrinkName() + " " + drinkList.getDrinkPrice());
+        }
+        // TODO: 13.05.2019 удалить 
+        /*System.out.println("1 - " + TEA.name + ", " + TEA.price + " руб.");
         System.out.println("2 - " + COFFEE.name + ", " + COFFEE.price + " руб.");
         System.out.println("3 - " + SODA.name + ", " + SODA.price + " руб.");
-        System.out.println("4 - " + LEMONADE.name + ", " + LEMONADE.price + " руб.");
+        System.out.println("4 - " + LEMONADE.name + ", " + LEMONADE.price + " руб.");*/
         System.out.println("Выберите цифрой");
     }
 }
