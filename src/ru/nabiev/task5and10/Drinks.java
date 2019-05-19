@@ -1,9 +1,6 @@
-package ru.nabiev.task5;
+package ru.nabiev.task5and10;
 
 public class Drinks {
-
-    // TODO: 13.05.2019 этот класс сейчас не нужен, т к в автомате создали enum 
-    // TODO: 13.05.2019 ЛИБО в автомате создаем массив, туда кадем все значения из этого enum, из автомата удаляем enum DrinksList 
 
     private String name;
     private int price;

@@ -1,13 +1,7 @@
-package ru.nabiev.task5;
+package ru.nabiev.task5and10;
 
 public class VendingMachine {
     static int account = 0;
-
-    // TODO: 13.05.2019 удалить 
-    /*Drinks TEA = new Drinks("Чай", 20);
-    Drinks COFFEE = new Drinks("Кофе", 30);
-    Drinks SODA = new Drinks("Газированная вода", 10);
-    Drinks LEMONADE = new Drinks("Лимонад", 25);*/
 
     public enum DrinkList {
         TEA("Чай", 20),
@@ -75,11 +69,6 @@ public class VendingMachine {
         for (DrinkList drinkList : DrinkList.values()) {
             System.out.println(i++ + " " + drinkList.getDrinkName() + " " + drinkList.getDrinkPrice());
         }
-        // TODO: 13.05.2019 удалить, не совсем правильно для каждого напитка создавать отдельный sout
-        /*System.out.println("1 - " + TEA.name + ", " + TEA.price + " руб.");
-        System.out.println("2 - " + COFFEE.name + ", " + COFFEE.price + " руб.");
-        System.out.println("3 - " + SODA.name + ", " + SODA.price + " руб.");
-        System.out.println("4 - " + LEMONADE.name + ", " + LEMONADE.price + " руб.");*/
         System.out.println("Выберите цифрой");
     }
 }
