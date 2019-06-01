@@ -41,15 +41,17 @@ public class Child {
         return FoodList.values();
     }
 
-    public boolean eat(int momFood){
-        Child child = new Child();
-        Child.FoodList foodelem = child.getFoodList()[momFood-1];
+    public void eat(int momFood) throws Exception {
+        FoodList foodelem = FoodList.values()[momFood-1];
         if (foodelem.isFoodCanIEat()) {
             System.out.println(foodelem.getFoodName());
-            return true;
+            System.out.println("Съел…за обе щеки!");
+            //return true;
         } else {
             System.out.println(foodelem.getFoodName());
-            return false;
+            throw new Exception();
+            //return false;
         }
     }
+
 }
