@@ -8,7 +8,7 @@ public class LibraryApp {
     public static void main(String[] args) throws Exception {
         Library library = loadLibrary();
         //Library library = new Library(); //строчка для первого заведения библиотеки
-        System.out.println("Был: " + library);
+        System.out.println("Был:");
         library.listBooks();
         Book catcherInRye = new Book("Над пропастью во ржи", "Джером Д. Сэлинджер", 1951);
         library.addBook(catcherInRye);
@@ -20,7 +20,7 @@ public class LibraryApp {
         saveLibrary(library);
 
         Library libraryLoad = loadLibrary();
-        System.out.println("Стал: " + libraryLoad);
+        System.out.println("Стал:");
         libraryLoad.listBooks();
 
     }
