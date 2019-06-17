@@ -22,5 +22,4 @@ public class homework1 {
         }
        myArray[myArray.length - 1] = 0;
     }
-
 }

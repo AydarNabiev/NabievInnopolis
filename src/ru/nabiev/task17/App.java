@@ -11,7 +11,7 @@ public class App {
 
         System.out.println("Было " + Arrays.toString(personList.toArray()));
 
-        personList.sort(Comparator.comparing(Person::getName).thenComparing(Person::getAge));
+        Collections.sort(personList, new PersonSuperComparator());
 
         System.out.println("Стало " + Arrays.toString(personList.toArray()));
     }

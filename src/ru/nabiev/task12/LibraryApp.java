@@ -3,11 +3,23 @@ package ru.nabiev.task12;
 import java.io.*;
 
 public class LibraryApp {
-    private static final String fileName = "Library.bin";
+    //static File file = new File("Library.bin");
+    private static final String fileName = "Library1.bin";
 
-    public static void main(String[] args) throws Exception {
-        Library library = loadLibrary();
-        //Library library = new Library(); //строчка для первого заведения библиотеки
+    public static void main(String[] args){
+        //file.createNewFile();
+        Library library = null;
+        try {
+            library = loadLibrary();
+        } catch (IOException e) {
+            System.out.println("Произошла ошибка");
+
+        } catch (ClassNotFoundException e) {
+            System.out.println("Произошла ошибка");
+        }
+        if (library == null) {
+            library = new Library();
+        }
         System.out.println("Был:");
         library.listBooks();
         Book catcherInRye = new Book("Над пропастью во ржи", "Джером Д. Сэлинджер", 1951);
@@ -19,9 +31,10 @@ public class LibraryApp {
 
         saveLibrary(library);
 
-        Library libraryLoad = loadLibrary();
+
         System.out.println("Стал:");
-        libraryLoad.listBooks();
+        library.listBooks();
+
 
     }
 
